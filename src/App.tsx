@@ -1,6 +1,45 @@
 import Foto from './assets/foto_titulo.jpg'
 import CV from './assets/CV_Abel_Barojas.pdf'
 import ExperienceItem from './components/ExperienceItem'
+import Projects from './components/projects'
+
+
+const ProjectsData = [
+  {
+    title: "Agenda web ",
+    tecnologies: ["Vue.Js", "Laravel", "Tailwind", "MySQL", "Api ", "SwetAlert2"],
+    description: "Sistema desarrollado con Vue.Js y Laravel enfocado en una experiencia moderna y optimizada.",
+    images: ["", ""]
+  },
+  {
+    title: "D'novac Papeleria ",
+    tecnologies: ["Vue.Js", "Laravel", "Tailwind", "MySQL", "Api "],
+    description: "Sistema desarrollado con Vue.Js y Laravel enfocado en una experiencia moderna y optimizada.",
+    images: ["", ""]
+  },
+  {
+    title: "Galeria de arte digital ",
+    tecnologies: ["Html", "Css", "JavaScript"],
+    description: "Sistema desarrollado con Vue.Js y Laravel enfocado en una experiencia moderna y optimizada.",
+    images: ["", ""]
+  },
+  {
+    title: "Vistella E-commerce ",
+    tecnologies: ["Nest.Js", "Postgress", ""],
+    description: "Sistema desarrollado con Vue.Js y Laravel enfocado en una experiencia moderna y optimizada.",
+    images: ["", ""]
+  }
+  ,
+  {
+    title: "Api Multi-Empresas ",
+    tecnologies: ["Laravel ", "Mysql", "Postman"],
+    description: "Sistema desarrollado con laravel y Mysql enfocado en una experiencia moderna y optimizada.",
+    images: ["", ""]
+  }
+
+
+]
+
 
 const experiences = [
   {
@@ -166,6 +205,19 @@ export default function CVWeb() {
             "Office 365",
             "Word",
             "Excel",
+            "Nest.js",
+            "Postgress",
+            "SwetAlert2",
+            "JWT",
+            "Bash",
+            "API REST",
+            "Python",
+            "Pandas",
+            "Numpy",
+            "Matplotlib",
+            "Scrum",
+
+
           ].map((skill) => (
             <div
               key={skill}
@@ -208,38 +260,22 @@ export default function CVWeb() {
           </a>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {[1, 2, 3].map((project) => (
-            <div
-              key={project}
-              className="bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden hover:-translate-y-2 transition duration-300 shadow-xl"
-            >
-              <div className="h-48 bg-gradient-to-br from-cyan-500/20 to-purple-500/20 flex items-center justify-center text-slate-400 font-semibold">
-                Preview Proyecto
-              </div>
+        <div className=" ">
 
-              <div className="p-6">
-                <h3 className="text-2xl font-bold mb-3">Proyecto Web</h3>
 
-                <p className="text-slate-300 text-sm leading-relaxed mb-5">
-                  Sistema desarrollado con React y Laravel enfocado en una
-                  experiencia moderna y optimizada.
-                </p>
-
-                <div className="flex flex-wrap gap-2">
-                  {['React', 'Laravel', 'Tailwind'].map((tech) => (
-                    <span
-                      key={tech}
-                      className="bg-slate-800 text-cyan-400 text-sm px-3 py-1 rounded-full"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          ))}
+          <div className="space-y-8">
+            {ProjectsData.map((pro, index) => (
+              <Projects
+                key={index}
+                title={pro.title}
+                tecnologies={pro.tecnologies}
+                description={pro.description}
+                images={pro.images}
+              />
+            ))}
+          </div>
         </div>
+
       </section>
 
       {/* Footer */}
